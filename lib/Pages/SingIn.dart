@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gift_shop/Pages/SingUp.dart';
 
 class SingIn extends StatelessWidget {
   const SingIn({super.key});
@@ -23,10 +24,10 @@ class SingIn extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    padding: const EdgeInsets.only(top: 16, bottom: 72),
+                    padding: const EdgeInsets.only(top: 8, bottom: 64),
                     //color: Colors.amber,
                     width: MediaQuery.of(context).size.width * 0.25,
-                    height: MediaQuery.of(context).size.height * 0.25,
+                    height: MediaQuery.of(context).size.height * 0.2,
                     child: Image.network(
                         'https://static.tildacdn.com/tild3737-3035-4231-a163-626363343036/_.jpg',
                         fit: BoxFit.fill),
@@ -80,42 +81,52 @@ class SingIn extends StatelessWidget {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(top: 40, bottom: 24),
+                    padding: const EdgeInsets.only(top: 40),
                     child: Container(
                       decoration: BoxDecoration(
                           color: Colors.deepPurple,
                           borderRadius: BorderRadius.circular(32)),
                       width: MediaQuery.of(context).size.width * 0.8,
                       height: MediaQuery.of(context).size.height * 0.06,
-                      child: const Center(
-                        child: Text(
-                          "Continue",
-                          style: TextStyle(color: Colors.white, fontSize: 16),
+                      child: FloatingActionButton(
+                        onPressed: () {},
+                        backgroundColor: Colors.deepPurple,
+                        child: const Center(
+                          child: Text(
+                            "Continue",
+                            style: TextStyle(color: Colors.white, fontSize: 16),
+                          ),
                         ),
                       ),
                     ),
                   ),
                   SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.8,
+                    width: MediaQuery.of(context).size.width * 0.87,
                     child: Center(
-                      child: Row(
-                        children: <Widget>[
-                          SizedBox(
-                              width: MediaQuery.of(context).size.width * 0.475,
+                      child: TextButton(
+                        onPressed: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => const SingUp())
+                          );
+                        },
+                        child: Row(
+                          children: <Widget>[
+                            SizedBox(
+                                width: MediaQuery.of(context).size.width * 0.475,
+                                child: const Text(
+                                  "Don't have an Account?",
+                                  style: TextStyle(fontSize: 12),
+                                  textAlign: TextAlign.right,
+                                )),
+                            SizedBox(
+                              width: MediaQuery.of(context).size.width * 0.325,
                               child: const Text(
-                                "Don't have an Account?",
-                                style: TextStyle(fontSize: 12),
-                                textAlign: TextAlign.right,
-                              )),
-                          SizedBox(
-                            width: MediaQuery.of(context).size.width * 0.325,
-                            child: const Text(
-                              " Create one",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 12),
-                            ),
-                          )
-                        ],
+                                " Create one",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold, fontSize: 12),
+                              ),
+                            )
+                          ],
+                        ),
                       ),
                     ),
                   )

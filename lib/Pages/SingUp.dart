@@ -23,10 +23,10 @@ class SingUp extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    padding: const EdgeInsets.only(top: 16, bottom: 72),
+                    padding: const EdgeInsets.only(top: 8, bottom: 64),
                     //color: Colors.amber,
                     width: MediaQuery.of(context).size.width * 0.25,
-                    height: MediaQuery.of(context).size.height * 0.25,
+                    height: MediaQuery.of(context).size.height * 0.2,
                     child: Image.network(
                         'https://static.tildacdn.com/tild3737-3035-4231-a163-626363343036/_.jpg',
                         fit: BoxFit.fill),
@@ -51,7 +51,7 @@ class SingUp extends StatelessWidget {
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(16),
                             ),
-                            hintText: "Email"),
+                            hintText: "Name"),
                       ),
                     ),
                   ),
@@ -102,10 +102,14 @@ class SingUp extends StatelessWidget {
                           borderRadius: BorderRadius.circular(32)),
                       width: MediaQuery.of(context).size.width * 0.8,
                       height: MediaQuery.of(context).size.height * 0.06,
-                      child: const Center(
-                        child: Text(
-                          "Continue",
-                          style: TextStyle(color: Colors.white, fontSize: 16),
+                      child: FloatingActionButton(
+                        backgroundColor: Colors.deepPurple,
+                        onPressed: () {},
+                        child: const Center(
+                          child: Text(
+                            "Continue",
+                            style: TextStyle(color: Colors.white, fontSize: 16),
+                          ),
                         ),
                       ),
                     ),
