@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gift_shop/Pages/Catalogy.dart';
+import 'package:gift_shop/Pages/Change_profile.dart';
 import 'package:gift_shop/Pages/Profile.dart';
 import 'package:gift_shop/Pages/SingIn.dart';
 import 'package:gift_shop/Pages/SingUp.dart';
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const CatalogyItem(),
+      home: const CatalogyGrid(),
     );
   }
 }

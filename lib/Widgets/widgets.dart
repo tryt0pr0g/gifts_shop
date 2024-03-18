@@ -11,33 +11,46 @@ class CatalogyItem extends StatelessWidget {
       width: MediaQuery.of(context).size.width * 0.4,
       child: Column(
         children: <Widget>[
-          SizedBox(
-              height: MediaQuery.of(context).size.height * 0.3,
-              child: Stack(
-                children: [
-                  Container(
-                    //color: Colors.black,
-                    child: Center(
-                      child: Image.network(
-                        'https://www.meme-arsenal.com/memes/79501211e649a1ecad84dd2a6a598ea1.jpg',
-                        fit: BoxFit.fill,
-                        width: double.infinity,
-                        height: double.infinity,
-                      ),
-                    ),
-                  ),
-                  Align(
-                      alignment: Alignment.topRight,
-                      child: Padding(
-                        padding: const EdgeInsets.all(12),
-                        child: IconButton(
-                          onPressed: () {},
-                          icon: const Icon(Icons.favorite),
+          Expanded(
+            child: SizedBox(
+                height: MediaQuery.of(context).size.height * 0.3,
+                child: Expanded(
+                  flex: 1,
+                  child: Stack(
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(16)),
+                        //color: Colors.black,
+                        child: Center(
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(16.0),
+                            child: SizedBox.fromSize(
+                              size: const Size.fromRadius(double.infinity),
+                              child: Image.network(
+                                'https://www.meme-arsenal.com/memes/79501211e649a1ecad84dd2a6a598ea1.jpg',
+                                fit: BoxFit.cover,
+                                width: double.infinity,
+                                height: double.infinity,
+                              ),
+                            ),
+                          ),
                         ),
-                      ))
-                ],
-              )),
-          Container(
+                      ),
+                      Align(
+                          alignment: Alignment.topRight,
+                          child: Padding(
+                            padding: const EdgeInsets.all(8),
+                            child: IconButton(
+                              onPressed: () {},
+                              icon: const Icon(Icons.favorite),
+                            ),
+                          ))
+                    ],
+                  ),
+                )),
+          ),
+          SizedBox(
             height: MediaQuery.of(context).size.height * 0.025,
             width: double.infinity,
             //color: Colors.black,
@@ -91,5 +104,29 @@ class CatalogyItem extends StatelessWidget {
         ],
       ),
     ));
+  }
+}
+
+class CatalogyGrid extends StatelessWidget {
+  const CatalogyGrid({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SizedBox(
+          width: double.infinity,
+          height: double.infinity,
+          child: Center(
+            child: GridView.builder(
+                itemCount: 5,
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    crossAxisSpacing: 16,
+                    mainAxisSpacing: 16),
+                itemBuilder: (context, index) {
+                  return CatalogyItem();
+                }),
+          )),
+    );
   }
 }
