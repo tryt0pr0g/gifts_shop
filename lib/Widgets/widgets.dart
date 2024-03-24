@@ -113,20 +113,19 @@ class CatalogyGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SizedBox(
-          width: double.infinity,
-          height: double.infinity,
-          child: Center(
-            child: GridView.builder(
-                itemCount: 5,
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    crossAxisSpacing: 16,
-                    mainAxisSpacing: 16),
-                itemBuilder: (context, index) {
-                  return CatalogyItem();
-                }),
-          )),
+      body: Center(
+        child: GridView.builder(
+            itemCount: 5,
+            shrinkWrap: true,
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                crossAxisSpacing: 0,
+                mainAxisSpacing: 16,
+                ),
+            itemBuilder: (context, index) {
+              return CatalogyItem();
+            }),
+      ),
     );
   }
 }
